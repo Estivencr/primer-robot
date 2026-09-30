@@ -1,0 +1,11 @@
+name: Mi primer robot 
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  revisar: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Revisar código
+      - run: test -f README.md && echo "El README.md existe" || echo "El README.md no existe"
